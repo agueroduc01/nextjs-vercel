@@ -1,12 +1,17 @@
-'use client';
+'use client'; // 👈 BẮT BUỘC trong Next.js App Router (animation chạy phía client)
 
-import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function AboutPage() {
   return (
-    <div>
-      <h1>About Page</h1>
-      <p>This is the about page content.</p>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }} // trạng thái ban đầu
+      animate={{ opacity: 1, y: 0 }} // animation đến trạng thái này
+      transition={{ duration: 0.6 }} // thời gian chuyển động
+      className="p-6 bg-white rounded-2xl shadow-md"
+    >
+      <h1 className="text-xl font-bold">Hello Framer Motion 👋</h1>
+      <p>Fade-in animation running inside Next.js!</p>
+    </motion.div>
   );
 }
