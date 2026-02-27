@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* Force clean rebuild */
   reactStrictMode: true,
+  images: {
+    formats: ["image/webp"],
+  },
 };
 
 export default nextConfig;
